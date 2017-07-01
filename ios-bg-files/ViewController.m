@@ -27,6 +27,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupViewController];
+    // TODO: remove. Register local notification support.
+    UIApplication *app = [UIApplication sharedApplication];
+    if ([app respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        [app registerUserNotificationSettings:
+            [UIUserNotificationSettings
+                settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound
+                categories:nil]];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -100,6 +108,14 @@
     didNoticeChangeInDirectory:(NSString *)dir {
 
     NSLog(@"VC. Directory change: '%@'", dir);
+
+    // TODO: remove.
+    UILocalNotification *notification = [UILocalNotification new];
+    notification.alertTitle = @"BGFiles";
+    notification.alertBody = @"Directory changed!";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    [[UIApplication sharedApplication]
+        presentLocalNotificationNow:notification];
 }
 
 @end
