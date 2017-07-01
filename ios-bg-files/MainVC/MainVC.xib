@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,14 +10,91 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainVC">
             <connections>
+                <outlet property="locationButton" destination="XfB-9M-eSD" id="YDi-nk-8gq"/>
+                <outlet property="noteLabel" destination="9LT-T0-zJu" id="9AR-3V-K8W"/>
+                <outlet property="notificationButton" destination="z9y-ag-Umw" id="Xr9-D4-W6H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p3s-Kg-W5e">
+                    <rect key="frame" x="15" y="75" width="290" height="390"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfB-9M-eSD">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="HFP-5Z-FF8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Set location to 'Always' in Settings" backgroundImage="button_enabled.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="disabled" title="Location is set to 'Always'" backgroundImage="button_disabled.png"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9y-ag-Umw">
+                            <rect key="frame" x="0.0" y="55" width="290" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="ybW-qN-mE1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Enable notifications in Settings" backgroundImage="button_enabled.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="disabled" title="Notifications are enabled" backgroundImage="button_disabled.png"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LT-T0-zJu">
+                            <rect key="frame" x="0.0" y="180" width="290" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4a-HJ-GW1">
+                            <rect key="frame" x="0.0" y="110" width="290" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="8AU-eh-8Ya"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Select directory to track" backgroundImage="button_enabled.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="disabled" title="Notifications are enabled" backgroundImage="button_disabled.png"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="m4a-HJ-GW1" firstAttribute="leading" secondItem="p3s-Kg-W5e" secondAttribute="leading" id="15T-Bm-Rfp"/>
+                        <constraint firstItem="9LT-T0-zJu" firstAttribute="top" secondItem="m4a-HJ-GW1" secondAttribute="bottom" constant="30" id="35I-ns-DKS"/>
+                        <constraint firstAttribute="trailing" secondItem="XfB-9M-eSD" secondAttribute="trailing" id="AAJ-oT-ttV"/>
+                        <constraint firstItem="XfB-9M-eSD" firstAttribute="leading" secondItem="p3s-Kg-W5e" secondAttribute="leading" id="Bez-7w-APk"/>
+                        <constraint firstItem="z9y-ag-Umw" firstAttribute="top" secondItem="XfB-9M-eSD" secondAttribute="bottom" constant="15" id="IvA-p8-RHw"/>
+                        <constraint firstItem="m4a-HJ-GW1" firstAttribute="top" secondItem="z9y-ag-Umw" secondAttribute="bottom" constant="15" id="Ws6-L9-h0m"/>
+                        <constraint firstAttribute="trailing" secondItem="m4a-HJ-GW1" secondAttribute="trailing" id="Ygy-Br-rQr"/>
+                        <constraint firstAttribute="trailing" secondItem="z9y-ag-Umw" secondAttribute="trailing" id="aHQ-4m-LUj"/>
+                        <constraint firstAttribute="trailing" secondItem="9LT-T0-zJu" secondAttribute="trailing" id="bQ6-rX-cKu"/>
+                        <constraint firstItem="XfB-9M-eSD" firstAttribute="top" secondItem="p3s-Kg-W5e" secondAttribute="top" id="ebh-RU-T53"/>
+                        <constraint firstItem="9LT-T0-zJu" firstAttribute="leading" secondItem="p3s-Kg-W5e" secondAttribute="leading" id="gTp-8W-k41"/>
+                        <constraint firstItem="z9y-ag-Umw" firstAttribute="leading" secondItem="p3s-Kg-W5e" secondAttribute="leading" id="pTO-5n-2Lp"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="p3s-Kg-W5e" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="HwV-IR-2lH"/>
+                <constraint firstAttribute="trailing" secondItem="p3s-Kg-W5e" secondAttribute="trailing" constant="15" id="Jt7-Ba-IuE"/>
+                <constraint firstItem="p3s-Kg-W5e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="obr-9U-JTr"/>
+                <constraint firstAttribute="bottom" secondItem="p3s-Kg-W5e" secondAttribute="bottom" constant="15" id="wEP-EK-DpA"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="button_disabled.png" width="2" height="2"/>
+        <image name="button_enabled.png" width="2" height="2"/>
+    </resources>
 </document>
