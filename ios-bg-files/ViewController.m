@@ -1,29 +1,41 @@
-//
-//  ViewController.m
-//  ios-bg-files
-//
-//  Created by kornerr on 7/1/17.
-//  Copyright © 2017 kornerr. All rights reserved.
-//
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "FileSystemVC.h"
+
+@interface ViewController () <FileSystemVCDelegate>
 
 @end
 
 @implementation ViewController
 
+#pragma mark - PUBLIC
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self setupViewController];
 }
 
+#pragma mark - PRIVATE
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupViewController {
+    
 }
 
+- (IBAction)selectDirectory:(id)sender {
+    NSURL *url = [NSURL fileURLWithPath:NSHomeDirectory()];
+    FileSystemVC *vc = [[FileSystemVC alloc] initWithURL:url];
+    vc.delegate = self;
+    UINavigationController *nc =
+        [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nc animated:YES completion:nil];
+}
+
+#pragma mark - DELEGATE
+
+- (void)fileSystemVC:(FileSystemVC *)fsvc didSelectDirectory:(NSURL *)url {
+    NSLog(@"ViewController. Selected dir: '%@'", url.path);
+}
 
 @end
+

@@ -13,6 +13,13 @@
 		2F4432CF1F0791B400B9C7D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432CD1F0791B400B9C7D8 /* Main.storyboard */; };
 		2F4432D11F0791B400B9C7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432D01F0791B400B9C7D8 /* Assets.xcassets */; };
 		2F4432D41F0791B400B9C7D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432D21F0791B400B9C7D8 /* LaunchScreen.storyboard */; };
+		2F4432E71F07939E00B9C7D8 /* FileSystemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4432DE1F07939E00B9C7D8 /* FileSystemCell.m */; };
+		2F4432E81F07939E00B9C7D8 /* FileSystemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432DF1F07939E00B9C7D8 /* FileSystemCell.xib */; };
+		2F4432E91F07939E00B9C7D8 /* FileSystemItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4432E11F07939E00B9C7D8 /* FileSystemItem.m */; };
+		2F4432EA1F07939E00B9C7D8 /* FileSystemItem+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4432E31F07939E00B9C7D8 /* FileSystemItem+Parser.m */; };
+		2F4432EB1F07939F00B9C7D8 /* FileSystemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4432E51F07939E00B9C7D8 /* FileSystemVC.m */; };
+		2F4432EC1F07939F00B9C7D8 /* FileSystemVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432E61F07939E00B9C7D8 /* FileSystemVC.xib */; };
+		2F4432EF1F0793A700B9C7D8 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4432EE1F0793A700B9C7D8 /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,18 @@
 		2F4432D01F0791B400B9C7D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F4432D31F0791B400B9C7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F4432D51F0791B400B9C7D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F4432DD1F07939E00B9C7D8 /* FileSystemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemCell.h; sourceTree = "<group>"; };
+		2F4432DE1F07939E00B9C7D8 /* FileSystemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemCell.m; sourceTree = "<group>"; };
+		2F4432DF1F07939E00B9C7D8 /* FileSystemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileSystemCell.xib; sourceTree = "<group>"; };
+		2F4432E01F07939E00B9C7D8 /* FileSystemItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemItem.h; sourceTree = "<group>"; };
+		2F4432E11F07939E00B9C7D8 /* FileSystemItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemItem.m; sourceTree = "<group>"; };
+		2F4432E21F07939E00B9C7D8 /* FileSystemItem+Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FileSystemItem+Parser.h"; sourceTree = "<group>"; };
+		2F4432E31F07939E00B9C7D8 /* FileSystemItem+Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FileSystemItem+Parser.m"; sourceTree = "<group>"; };
+		2F4432E41F07939E00B9C7D8 /* FileSystemVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemVC.h; sourceTree = "<group>"; };
+		2F4432E51F07939E00B9C7D8 /* FileSystemVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemVC.m; sourceTree = "<group>"; };
+		2F4432E61F07939E00B9C7D8 /* FileSystemVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileSystemVC.xib; sourceTree = "<group>"; };
+		2F4432ED1F0793A700B9C7D8 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		2F4432EE1F0793A700B9C7D8 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +77,8 @@
 		2F4432C31F0791B400B9C7D8 /* ios-bg-files */ = {
 			isa = PBXGroup;
 			children = (
+				2F4432DB1F07937800B9C7D8 /* FileSystemVC */,
+				2F4432DC1F07938100B9C7D8 /* Location */,
 				2F4432C71F0791B400B9C7D8 /* AppDelegate.h */,
 				2F4432C81F0791B400B9C7D8 /* AppDelegate.m */,
 				2F4432CA1F0791B400B9C7D8 /* ViewController.h */,
@@ -77,6 +98,32 @@
 				2F4432C51F0791B400B9C7D8 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F4432DB1F07937800B9C7D8 /* FileSystemVC */ = {
+			isa = PBXGroup;
+			children = (
+				2F4432DD1F07939E00B9C7D8 /* FileSystemCell.h */,
+				2F4432DE1F07939E00B9C7D8 /* FileSystemCell.m */,
+				2F4432DF1F07939E00B9C7D8 /* FileSystemCell.xib */,
+				2F4432E01F07939E00B9C7D8 /* FileSystemItem.h */,
+				2F4432E11F07939E00B9C7D8 /* FileSystemItem.m */,
+				2F4432E21F07939E00B9C7D8 /* FileSystemItem+Parser.h */,
+				2F4432E31F07939E00B9C7D8 /* FileSystemItem+Parser.m */,
+				2F4432E41F07939E00B9C7D8 /* FileSystemVC.h */,
+				2F4432E51F07939E00B9C7D8 /* FileSystemVC.m */,
+				2F4432E61F07939E00B9C7D8 /* FileSystemVC.xib */,
+			);
+			path = FileSystemVC;
+			sourceTree = "<group>";
+		};
+		2F4432DC1F07938100B9C7D8 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				2F4432ED1F0793A700B9C7D8 /* Location.h */,
+				2F4432EE1F0793A700B9C7D8 /* Location.m */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +190,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4432E81F07939E00B9C7D8 /* FileSystemCell.xib in Resources */,
 				2F4432D41F0791B400B9C7D8 /* LaunchScreen.storyboard in Resources */,
 				2F4432D11F0791B400B9C7D8 /* Assets.xcassets in Resources */,
 				2F4432CF1F0791B400B9C7D8 /* Main.storyboard in Resources */,
+				2F4432EC1F07939F00B9C7D8 /* FileSystemVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +205,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4432E71F07939E00B9C7D8 /* FileSystemCell.m in Sources */,
 				2F4432CC1F0791B400B9C7D8 /* ViewController.m in Sources */,
+				2F4432EA1F07939E00B9C7D8 /* FileSystemItem+Parser.m in Sources */,
+				2F4432E91F07939E00B9C7D8 /* FileSystemItem.m in Sources */,
+				2F4432EB1F07939F00B9C7D8 /* FileSystemVC.m in Sources */,
 				2F4432C91F0791B400B9C7D8 /* AppDelegate.m in Sources */,
+				2F4432EF1F0793A700B9C7D8 /* Location.m in Sources */,
 				2F4432C61F0791B400B9C7D8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
