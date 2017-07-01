@@ -66,9 +66,11 @@
 
 - (void)locationManager:(CLLocationManager *)locationManager
     didUpdateLocations:(NSArray *)locations {
-
-    printf("Location. Update\n");
-    NSLog(@"Location.Update");
+    // Prevent flood.
+    static int i = 0;
+    if (!(++i % 30)) {
+        NSLog(@"Location. Still updating");
+    }
 }
 
 @end

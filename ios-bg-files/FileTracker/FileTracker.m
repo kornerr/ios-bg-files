@@ -49,6 +49,8 @@
         ^{
             close(self.descriptor);
         });
+    // Start tracking.
+    dispatch_resume(self.source);
 }
 
 - (void)stopTracking {
