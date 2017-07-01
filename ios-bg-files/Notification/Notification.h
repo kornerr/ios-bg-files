@@ -1,23 +1,25 @@
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class Notification;
 
 @protocol NotificationDelegate
 
-- (void)location:(Location *)location
-    didChangeBackgroundExecutionStatus:(BOOL)backgroundExecutionIsAllowed;
+- (void)notification:(Notification *)notification
+    didChangeAllowedStatus:(BOOL)status;
 
 @end
 
-@interface Location : NSObject
+@interface Notification : NSObject
 
-@property (nonatomic, assign, readonly) BOOL isBackgroundExecutionAllowed;
+@property (nonatomic, assign, readonly) BOOL isAllowed;
 
-@property (nonatomic, weak) id<LocationDelegate> delegate;
+@property (nonatomic, weak) id<NotificationDelegate> delegate;
 
-- (void)requestBackgroundExecution;
-- (void)startUpdates;
+- (void)application:(UIApplication *)app
+    didRegisterUserNotificationSettings:(UIUserNotificationSettings *)uns;
+- (void)reportMessage:(NSString *)message;
+- (void)requestPermission;
 
 @end
 

@@ -8,6 +8,7 @@
 @interface MainVC ()
     <FileSystemVCDelegate,
     LocationDelegate,
+    NotificationDelegate,
     TrackerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIButton *locationButton;
@@ -25,23 +26,41 @@
 
 #pragma mark - PUBLIC
 
+- (void)refreshUI {
+    NSLog(@"MainVC. refreshUI");
+    // Buttons.
+    BOOL bgIsOn = self.location.isBackgroundExecutionAllowed;
+    self.locationButton.enabled = !bgIsOn;
+
+    BOOL notificationsAreOn = NO;
+    if (self.notification) {
+        notificationsAreOn = self.notification.isAllowed;
+        NSLog(
+            @"MainVC. refreshUI. notificationsAreOn: '%@'",
+            @(notificationsAreOn));
+        self.notificationButton.enabled = !notificationsAreOn;
+    }
+    // Note.
+    NSString *note =
+        [NSString
+            stringWithFormat:NSLocalizedString(@"Note.OK", nil),
+            self.selectedDir];
+    if (!bgIsOn) {
+        note = NSLocalizedString(@"Note.BG", nil);
+    }
+    else if (!notificationsAreOn) {
+        note = NSLocalizedString(@"Note.Notifications", nil);
+    }
+    else if (![self.selectedDir length]) {
+        note = NSLocalizedString(@"Note.Dir", nil);
+    }
+    self.noteLabel.text = note;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMainVC];
-
-    // TODO: remove. Register local notification support.
-    UIApplication *app = [UIApplication sharedApplication];
-    if ([app respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        [app registerUserNotificationSettings:
-            [UIUserNotificationSettings
-                settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound
-                categories:nil]];
-    }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self updateUI];
 }
 
 #pragma mark - PRIVATE
@@ -57,22 +76,16 @@
     [self.location requestBackgroundExecution];
 }
 
-- (void)updateUI {
-    BOOL bgIsOn = self.location.isBackgroundExecutionAllowed;
-    // Buttons.
-    self.locationButton.enabled = !bgIsOn;
-    // Note.
-    NSString *note =
-        [NSString
-            stringWithFormat:NSLocalizedString(@"Note.OK", nil),
-            self.selectedDir];
-    if (!bgIsOn) {
-        note = NSLocalizedString(@"Note.BG", nil);
-    }
-    else if (![self.selectedDir length]) {
-        note = NSLocalizedString(@"Note.Dir", nil);
-    }
-    self.noteLabel.text = note;
+- (void)setupNotification {
+    self.notification.delegate = self;
+    [self.notification requestPermission];
+}
+
+#pragma mark - PROPERTIES
+
+- (void)setNotification:(Notification *)notification {
+    _notification = notification;
+    [self setupNotification];
 }
 
 #pragma mark - BUTTONS
@@ -97,26 +110,25 @@
 - (void)fileSystemVC:(FileSystemVC *)fsvc didSelectDirectory:(NSURL *)url {
     self.selectedDir = url.path;
     [self.tracker startTrackingDirectory:url.path];
-    [self updateUI];
+    [self refreshUI];
 }
 
 - (void)location:(Location *)location
     didChangeBackgroundExecutionStatus:(BOOL)status {
 
-    [self updateUI];
+    [self refreshUI];
+}
+
+- (void)notification:(Notification *)notification
+    didChangeAllowedStatus:(BOOL)status {
+
+    [self refreshUI];
 }
 
 - (void)tracker:(Tracker *)tracker
     didNoticeChangeInDirectory:(NSString *)dir {
 
-    NSLog(@"VC. Directory change: '%@'", dir);
-
-    // TODO: remove.
-    UILocalNotification *notification = [UILocalNotification new];
-    notification.alertBody = @"Directory changed";
-    notification.soundName = UILocalNotificationDefaultSoundName;
-    [[UIApplication sharedApplication]
-        presentLocalNotificationNow:notification];
+    [self.notification reportMessage:@"Directory changed"];
 }
 
 @end

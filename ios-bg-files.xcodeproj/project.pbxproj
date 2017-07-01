@@ -24,6 +24,7 @@
 		2F4C2FFB1F07DBA0005BD29E /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4C2FF91F07DBA0005BD29E /* EXTScope.m */; };
 		2F4C30021F07EAEC005BD29E /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4C30001F07EAEC005BD29E /* MainVC.m */; };
 		2F4C30031F07EAEC005BD29E /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4C30011F07EAEC005BD29E /* MainVC.xib */; };
+		2F4C300C1F07FB45005BD29E /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4C300B1F07FB45005BD29E /* Notification.m */; };
 		2F7DFBA81F07D659008799A7 /* Tracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DFBA71F07D659008799A7 /* Tracker.m */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		2F4C2FFF1F07EAEC005BD29E /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		2F4C30001F07EAEC005BD29E /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		2F4C30011F07EAEC005BD29E /* MainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
+		2F4C300A1F07FB45005BD29E /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
+		2F4C300B1F07FB45005BD29E /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
 		2F7DFBA61F07D659008799A7 /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
 		2F7DFBA71F07D659008799A7 /* Tracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tracker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +94,7 @@
 		2F4432C31F0791B400B9C7D8 /* ios-bg-files */ = {
 			isa = PBXGroup;
 			children = (
+				2F4C30091F07FB30005BD29E /* Notification */,
 				2F4432DB1F07937800B9C7D8 /* FileSystemVC */,
 				2F4432DC1F07938100B9C7D8 /* Location */,
 				2F4C2FFE1F07EAD0005BD29E /* MainVC */,
@@ -168,6 +172,15 @@
 				2F4C30011F07EAEC005BD29E /* MainVC.xib */,
 			);
 			path = MainVC;
+			sourceTree = "<group>";
+		};
+		2F4C30091F07FB30005BD29E /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				2F4C300A1F07FB45005BD29E /* Notification.h */,
+				2F4C300B1F07FB45005BD29E /* Notification.m */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		2F7DFBA21F07CBBA008799A7 /* Tracker */ = {
@@ -265,6 +278,7 @@
 				2F4432E71F07939E00B9C7D8 /* FileSystemCell.m in Sources */,
 				2F4432EA1F07939E00B9C7D8 /* FileSystemItem+Parser.m in Sources */,
 				2F4C30021F07EAEC005BD29E /* MainVC.m in Sources */,
+				2F4C300C1F07FB45005BD29E /* Notification.m in Sources */,
 				2F4432E91F07939E00B9C7D8 /* FileSystemItem.m in Sources */,
 				2F4432EB1F07939F00B9C7D8 /* FileSystemVC.m in Sources */,
 				2F4432C91F0791B400B9C7D8 /* AppDelegate.m in Sources */,
