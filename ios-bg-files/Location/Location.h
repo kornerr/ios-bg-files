@@ -3,5 +3,7 @@
 
 @interface Location : NSObject
 
+- (void)startUpdates;
+
 @end
 

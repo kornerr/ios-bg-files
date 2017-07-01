@@ -23,7 +23,7 @@
 
 - (void)setupViewController {
     self.location = [Location new];
-    
+    [self.location startUpdates];
 }
 
 - (IBAction)selectDirectory:(id)sender {

@@ -19,6 +19,11 @@
     return self;
 }
 
+- (void)startUpdates {
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startUpdatingLocation];
+}
+
 #pragma mark - PRIVATE
 
 - (void)initLocation {
@@ -34,6 +39,14 @@
     self.locationManager.allowsBackgroundLocationUpdates = YES;
 }
 
+#pragma mark - DELEGATE
+
+- (void)locationManager:(CLLocationManager *)locationManager
+    didUpdateLocations:(NSArray *)locations {
+
+    printf("Location. Update\n");
+    NSLog(@"Location.Update");
+}
 
 @end
 
