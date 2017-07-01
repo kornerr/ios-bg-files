@@ -23,6 +23,7 @@
 		2F4432F31F07A44C00B9C7D8 /* button_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432F11F07A44C00B9C7D8 /* button_disabled.png */; };
 		2F4432F41F07A44C00B9C7D8 /* button_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432F21F07A44C00B9C7D8 /* button_enabled.png */; };
 		2F4432F71F07AC7100B9C7D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432F51F07AC7100B9C7D8 /* Localizable.strings */; };
+		2F7DFBA51F07CBD5008799A7 /* FileTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DFBA41F07CBD5008799A7 /* FileTracker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		2F4432F11F07A44C00B9C7D8 /* button_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_disabled.png; sourceTree = "<group>"; };
 		2F4432F21F07A44C00B9C7D8 /* button_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_enabled.png; sourceTree = "<group>"; };
 		2F4432F61F07AC7100B9C7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2F7DFBA31F07CBD5008799A7 /* FileTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTracker.h; sourceTree = "<group>"; };
+		2F7DFBA41F07CBD5008799A7 /* FileTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTracker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				2F4432DB1F07937800B9C7D8 /* FileSystemVC */,
+				2F7DFBA21F07CBBA008799A7 /* FileTracker */,
 				2F4432DC1F07938100B9C7D8 /* Location */,
 				2F4432C71F0791B400B9C7D8 /* AppDelegate.h */,
 				2F4432C81F0791B400B9C7D8 /* AppDelegate.m */,
@@ -141,6 +145,15 @@
 				2F4432F21F07A44C00B9C7D8 /* button_enabled.png */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		2F7DFBA21F07CBBA008799A7 /* FileTracker */ = {
+			isa = PBXGroup;
+			children = (
+				2F7DFBA31F07CBD5008799A7 /* FileTracker.h */,
+				2F7DFBA41F07CBD5008799A7 /* FileTracker.m */,
+			);
+			path = FileTracker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +243,7 @@
 				2F4432EA1F07939E00B9C7D8 /* FileSystemItem+Parser.m in Sources */,
 				2F4432E91F07939E00B9C7D8 /* FileSystemItem.m in Sources */,
 				2F4432EB1F07939F00B9C7D8 /* FileSystemVC.m in Sources */,
+				2F7DFBA51F07CBD5008799A7 /* FileTracker.m in Sources */,
 				2F4432C91F0791B400B9C7D8 /* AppDelegate.m in Sources */,
 				2F4432EF1F0793A700B9C7D8 /* Location.m in Sources */,
 				2F4432C61F0791B400B9C7D8 /* main.m in Sources */,
@@ -403,6 +417,7 @@
 				2F4432DA1F0791B400B9C7D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

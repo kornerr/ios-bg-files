@@ -1,11 +1,13 @@
 
 #import "ViewController.h"
 
+#import "FileTracker.h"
 #import "FileSystemVC.h"
 #import "Location.h"
 
 @interface ViewController () <FileSystemVCDelegate, LocationDelegate>
 
+@property (nonatomic, strong) FileTracker *tracker;
 @property (nonatomic, strong) Location *location;
 
 @property (nonatomic, strong) IBOutlet UIButton *bgLocationUpdatesButton;
@@ -32,6 +34,9 @@
 #pragma mark - PRIVATE
 
 - (void)setupViewController {
+    // File tracker.
+    self.tracker = [FileTracker new];
+    // Location.
     self.location = [Location new];
     self.location.delegate = self;
     [self.location startUpdates];
@@ -81,6 +86,7 @@
 
 - (void)fileSystemVC:(FileSystemVC *)fsvc didSelectDirectory:(NSURL *)url {
     self.selectedDir = url.path;
+    [self.tracker startTrackingDirectory:url.path];
     [self updateButtonsAndNote];
 }
 
