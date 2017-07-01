@@ -1,6 +1,8 @@
 
 #import "Tracker.h"
 
+#import "EXTScope.h"
+
 @interface Tracker ()
 
 @property (nonatomic, assign) int descriptor;
@@ -37,18 +39,24 @@
             self.descriptor,
             DISPATCH_VNODE_WRITE,
             self.queue);
+
+    @weakify(self);
+
     // Process changes.
     dispatch_source_set_event_handler(
         self.source,
         ^{
+            @strongify(self);
             [self directoryDidChange];
         });
     // Close descriptor upon cancellation.
     dispatch_source_set_cancel_handler(
         self.source,
         ^{
+            @strongify(self);
             close(self.descriptor);
         });
+
     // Start tracking.
     dispatch_resume(self.source);
 }
