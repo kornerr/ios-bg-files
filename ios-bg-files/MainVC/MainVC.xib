@@ -35,6 +35,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="disabled" title="Location is set to 'Always'" backgroundImage="button_disabled.png"/>
+                            <connections>
+                                <action selector="openSettings:" destination="-1" eventType="touchUpInside" id="pnZ-Uz-T5N"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9y-ag-Umw">
                             <rect key="frame" x="0.0" y="55" width="290" height="40"/>
@@ -47,6 +50,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="disabled" title="Notifications are enabled" backgroundImage="button_disabled.png"/>
+                            <connections>
+                                <action selector="openSettings:" destination="-1" eventType="touchUpInside" id="JZX-4J-NfE"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LT-T0-zJu">
                             <rect key="frame" x="0.0" y="180" width="290" height="16"/>
@@ -65,6 +71,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="disabled" title="Notifications are enabled" backgroundImage="button_disabled.png"/>
+                            <connections>
+                                <action selector="selectDirectory:" destination="-1" eventType="touchUpInside" id="2G6-XU-s0I"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
