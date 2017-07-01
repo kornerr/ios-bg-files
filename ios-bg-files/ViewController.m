@@ -1,14 +1,17 @@
 
 #import "ViewController.h"
 
-#import "FileTracker.h"
 #import "FileSystemVC.h"
 #import "Location.h"
+#import "Tracker.h"
 
-@interface ViewController () <FileSystemVCDelegate, LocationDelegate>
+@interface ViewController ()
+    <FileSystemVCDelegate,
+    LocationDelegate,
+    TrackerDelegate>
 
-@property (nonatomic, strong) FileTracker *tracker;
 @property (nonatomic, strong) Location *location;
+@property (nonatomic, strong) Tracker *tracker;
 
 @property (nonatomic, strong) IBOutlet UIButton *bgLocationUpdatesButton;
 @property (nonatomic, strong) IBOutlet UILabel *noteLabel;
@@ -35,7 +38,8 @@
 
 - (void)setupViewController {
     // File tracker.
-    self.tracker = [FileTracker new];
+    self.tracker = [Tracker new];
+    self.tracker.delegate = self;
     // Location.
     self.location = [Location new];
     self.location.delegate = self;
@@ -61,13 +65,7 @@
     self.noteLabel.text = note;
 }
 
-#pragma mark - DELEGATE
-
-- (void)location:(Location *)location
-    didChangeBackgroundExecutionStatus:(BOOL)status {
-
-    [self updateButtonsAndNote];
-}
+#pragma mark - BUTTONS
 
 - (IBAction)openSettings:(id)sender {
     NSURL *settingsURL =
@@ -84,10 +82,24 @@
     [self presentViewController:nc animated:YES completion:nil];
 }
 
+#pragma mark - DELEGATE
+
 - (void)fileSystemVC:(FileSystemVC *)fsvc didSelectDirectory:(NSURL *)url {
     self.selectedDir = url.path;
     [self.tracker startTrackingDirectory:url.path];
     [self updateButtonsAndNote];
+}
+
+- (void)location:(Location *)location
+    didChangeBackgroundExecutionStatus:(BOOL)status {
+
+    [self updateButtonsAndNote];
+}
+
+- (void)tracker:(Tracker *)tracker
+    didNoticeChangeInDirectory:(NSString *)dir {
+
+    NSLog(@"VC. Directory change: '%@'", dir);
 }
 
 @end

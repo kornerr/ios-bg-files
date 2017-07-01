@@ -1,7 +1,7 @@
 
-#import "FileTracker.h"
+#import "Tracker.h"
 
-@interface FileTracker ()
+@interface Tracker ()
 
 @property (nonatomic, assign) int descriptor;
 @property (nonatomic, strong) dispatch_queue_t queue;
@@ -10,14 +10,14 @@
 
 @end
 
-@implementation FileTracker
+@implementation Tracker
 
 #pragma mark - PUBLIC
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self initFileTracker];
+        [self initTracker];
     }
     return self;
 }
@@ -63,38 +63,24 @@
 #pragma mark - PRIVATE
 
 - (void)directoryDidChange {
-    NSLog(@"FileTracker. directoryDidChange '%@'", self.directory);
-}
-
-- (void)initFileTracker {
-    self.queue = dispatch_queue_create("FileTrackerQueue", 0);
-    self.source = nil;
-}
-
-#pragma mark - DELEGATE
-
-/*
-- (void)locationManager:(CLLocationManager *)locationManager
-    didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-
-    NSLog(@"Location. New auth status: '%@'", @(status));
+    // TODO This does not take long file uploads into consideration,
+    // because big files take time. However, that's easy to support
+    // if so desired.
+    NSLog(@"Tracker. directoryDidChange '%@'", self.directory);
     if (self.delegate &&
         [(NSObject *)self.delegate
-            respondsToSelector:@selector(location:didChangeBackgroundExecutionStatus:)]) {
+            respondsToSelector:@selector(tracker:didNoticeChangeInDirectory:)]) {
 
         [self.delegate
-            location:self
-            didChangeBackgroundExecutionStatus:self.isBackgroundExecutionAllowed];
+            tracker:self
+            didNoticeChangeInDirectory:self.directory];
     }
 }
 
-- (void)locationManager:(CLLocationManager *)locationManager
-    didUpdateLocations:(NSArray *)locations {
-
-    printf("Location. Update\n");
-    NSLog(@"Location.Update");
+- (void)initTracker {
+    self.queue = dispatch_queue_create("TrackerQueue", 0);
+    self.source = nil;
 }
-*/
 
 @end
 
