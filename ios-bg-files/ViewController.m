@@ -4,9 +4,14 @@
 #import "FileSystemVC.h"
 #import "Location.h"
 
-@interface ViewController () <FileSystemVCDelegate>
+@interface ViewController () <FileSystemVCDelegate, LocationDelegate>
 
 @property (nonatomic, strong) Location *location;
+
+@property (nonatomic, strong) IBOutlet UIButton *bgLocationUpdatesButton;
+@property (nonatomic, strong) IBOutlet UILabel *noteLabel;
+
+@property (nonatomic, strong) NSString *selectedDir;
 
 @end
 
@@ -19,11 +24,50 @@
     [self setupViewController];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self updateButtonsAndNote];
+}
+
 #pragma mark - PRIVATE
 
 - (void)setupViewController {
     self.location = [Location new];
+    self.location.delegate = self;
     [self.location startUpdates];
+    [self.location requestBackgroundExecution];
+}
+
+- (void)updateButtonsAndNote {
+    BOOL bgIsOn = self.location.isBackgroundExecutionAllowed;
+    // Buttons.
+    self.bgLocationUpdatesButton.enabled = !bgIsOn;
+    // Note.
+    NSString *note =
+        [NSString
+            stringWithFormat:NSLocalizedString(@"Note.OK", nil),
+            self.selectedDir];
+    if (!bgIsOn) {
+        note = NSLocalizedString(@"Note.BG", nil);
+    }
+    else if (![self.selectedDir length]) {
+        note = NSLocalizedString(@"Note.Dir", nil);
+    }
+    self.noteLabel.text = note;
+}
+
+#pragma mark - DELEGATE
+
+- (void)location:(Location *)location
+    didChangeBackgroundExecutionStatus:(BOOL)status {
+
+    [self updateButtonsAndNote];
+}
+
+- (IBAction)openSettings:(id)sender {
+    NSURL *settingsURL =
+        [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    [[UIApplication sharedApplication] openURL:settingsURL];
 }
 
 - (IBAction)selectDirectory:(id)sender {
@@ -35,10 +79,9 @@
     [self presentViewController:nc animated:YES completion:nil];
 }
 
-#pragma mark - DELEGATE
-
 - (void)fileSystemVC:(FileSystemVC *)fsvc didSelectDirectory:(NSURL *)url {
-    NSLog(@"ViewController. Selected dir: '%@'", url.path);
+    self.selectedDir = url.path;
+    [self updateButtonsAndNote];
 }
 
 @end

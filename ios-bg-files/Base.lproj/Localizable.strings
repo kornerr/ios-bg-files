@@ -1,0 +1,3 @@
+Note.OK = "READY\n\nMove the application to background. You will receive notifications outside this application when you change files in the selected directory.\n\nSelected directory: '%@'.";
+Note.BG = "WARNING\n\nBackground monitoring is turned off, because you have not enabled 'Always' location in Settings!";
+Note.Dir = "WARNING\n\nBackground monitoring is turned off, because you have not selected any directory to monitor!";

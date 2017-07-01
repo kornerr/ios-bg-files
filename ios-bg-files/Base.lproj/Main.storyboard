@@ -37,17 +37,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Und-wl-8OA">
-                                <rect key="frame" x="16" y="84" width="288" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Und-wl-8OA">
+                                <rect key="frame" x="16" y="79" width="288" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TFk-ks-meK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Background execution">
+                                <state key="normal" title="Set location to 'Always' in Settings" backgroundImage="button_enabled.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled" title="Location is set to 'Always'" backgroundImage="button_disabled.png"/>
+                                <connections>
+                                    <action selector="openSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W48-go-258"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jY-a9-H96">
-                                <rect key="frame" x="16" y="134" width="288" height="30"/>
+                                <rect key="frame" x="16" y="134" width="288" height="40"/>
                                 <color key="backgroundColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NBS-g4-GEZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Select directory to track">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,8 +66,8 @@
                                     <action selector="selectDirectory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uny-iJ-dmj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FJ-wv-TLO">
-                                <rect key="frame" x="16" y="214" width="288" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FJ-wv-TLO">
+                                <rect key="frame" x="16" y="204" width="288" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,21 +76,29 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9FJ-wv-TLO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0Wx-dU-SkL"/>
-                            <constraint firstItem="9FJ-wv-TLO" firstAttribute="top" secondItem="8jY-a9-H96" secondAttribute="bottom" constant="50" id="Hgz-ws-irz"/>
+                            <constraint firstItem="9FJ-wv-TLO" firstAttribute="top" secondItem="8jY-a9-H96" secondAttribute="bottom" constant="30" id="Hgz-ws-irz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Und-wl-8OA" secondAttribute="trailing" id="LSw-4z-6iJ"/>
-                            <constraint firstItem="8jY-a9-H96" firstAttribute="top" secondItem="Und-wl-8OA" secondAttribute="bottom" constant="20" id="T9b-Pa-IUA"/>
+                            <constraint firstItem="8jY-a9-H96" firstAttribute="top" secondItem="Und-wl-8OA" secondAttribute="bottom" constant="15" id="T9b-Pa-IUA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9FJ-wv-TLO" secondAttribute="trailing" id="Wgv-ZD-fHl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8jY-a9-H96" secondAttribute="trailing" id="iDs-Gw-WRs"/>
-                            <constraint firstItem="Und-wl-8OA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="vqm-V9-VWa"/>
+                            <constraint firstItem="Und-wl-8OA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="vqm-V9-VWa"/>
                             <constraint firstItem="8jY-a9-H96" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wGa-1o-I8G"/>
                             <constraint firstItem="Und-wl-8OA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xmf-zW-MVO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Monitor files in BG" id="Zr4-mu-G38"/>
+                    <connections>
+                        <outlet property="bgLocationUpdatesButton" destination="Und-wl-8OA" id="SLh-ng-or8"/>
+                        <outlet property="noteLabel" destination="9FJ-wv-TLO" id="9EV-jJ-HEM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-363.75" y="203.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_disabled.png" width="2" height="2"/>
+        <image name="button_enabled.png" width="2" height="2"/>
+    </resources>
 </document>

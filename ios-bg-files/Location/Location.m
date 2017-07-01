@@ -19,16 +19,25 @@
     return self;
 }
 
-- (void)startUpdates {
+- (void)requestBackgroundExecution {
     [self.locationManager requestAlwaysAuthorization];
+}
+
+- (void)startUpdates {
     [self.locationManager startUpdatingLocation];
+}
+
+#pragma mark - PROPERTIES
+
+- (BOOL)isBackgroundExecutionAllowed {
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    return (status == kCLAuthorizationStatusAuthorizedAlways);
 }
 
 #pragma mark - PRIVATE
 
 - (void)initLocation {
     [self setupLocationManager];
-
 }
 
 - (void)setupLocationManager {
@@ -40,6 +49,20 @@
 }
 
 #pragma mark - DELEGATE
+
+- (void)locationManager:(CLLocationManager *)locationManager
+    didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+
+    NSLog(@"Location. New auth status: '%@'", @(status));
+    if (self.delegate &&
+        [(NSObject *)self.delegate
+            respondsToSelector:@selector(location:didChangeBackgroundExecutionStatus:)]) {
+
+        [self.delegate
+            location:self
+            didChangeBackgroundExecutionStatus:self.isBackgroundExecutionAllowed];
+    }
+}
 
 - (void)locationManager:(CLLocationManager *)locationManager
     didUpdateLocations:(NSArray *)locations {

@@ -20,6 +20,9 @@
 		2F4432EB1F07939F00B9C7D8 /* FileSystemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4432E51F07939E00B9C7D8 /* FileSystemVC.m */; };
 		2F4432EC1F07939F00B9C7D8 /* FileSystemVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432E61F07939E00B9C7D8 /* FileSystemVC.xib */; };
 		2F4432EF1F0793A700B9C7D8 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4432EE1F0793A700B9C7D8 /* Location.m */; };
+		2F4432F31F07A44C00B9C7D8 /* button_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432F11F07A44C00B9C7D8 /* button_disabled.png */; };
+		2F4432F41F07A44C00B9C7D8 /* button_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432F21F07A44C00B9C7D8 /* button_enabled.png */; };
+		2F4432F71F07AC7100B9C7D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432F51F07AC7100B9C7D8 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		2F4432E61F07939E00B9C7D8 /* FileSystemVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileSystemVC.xib; sourceTree = "<group>"; };
 		2F4432ED1F0793A700B9C7D8 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		2F4432EE1F0793A700B9C7D8 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		2F4432F11F07A44C00B9C7D8 /* button_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_disabled.png; sourceTree = "<group>"; };
+		2F4432F21F07A44C00B9C7D8 /* button_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_enabled.png; sourceTree = "<group>"; };
+		2F4432F61F07AC7100B9C7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,8 @@
 				2F4432D01F0791B400B9C7D8 /* Assets.xcassets */,
 				2F4432D21F0791B400B9C7D8 /* LaunchScreen.storyboard */,
 				2F4432D51F0791B400B9C7D8 /* Info.plist */,
+				2F4432F51F07AC7100B9C7D8 /* Localizable.strings */,
+				2F4432F01F07A43200B9C7D8 /* resources */,
 				2F4432C41F0791B400B9C7D8 /* Supporting Files */,
 			);
 			path = "ios-bg-files";
@@ -124,6 +132,15 @@
 				2F4432EE1F0793A700B9C7D8 /* Location.m */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		2F4432F01F07A43200B9C7D8 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				2F4432F11F07A44C00B9C7D8 /* button_disabled.png */,
+				2F4432F21F07A44C00B9C7D8 /* button_enabled.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,8 +208,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F4432E81F07939E00B9C7D8 /* FileSystemCell.xib in Resources */,
+				2F4432F41F07A44C00B9C7D8 /* button_enabled.png in Resources */,
+				2F4432F31F07A44C00B9C7D8 /* button_disabled.png in Resources */,
 				2F4432D41F0791B400B9C7D8 /* LaunchScreen.storyboard in Resources */,
 				2F4432D11F0791B400B9C7D8 /* Assets.xcassets in Resources */,
+				2F4432F71F07AC7100B9C7D8 /* Localizable.strings in Resources */,
 				2F4432CF1F0791B400B9C7D8 /* Main.storyboard in Resources */,
 				2F4432EC1F07939F00B9C7D8 /* FileSystemVC.xib in Resources */,
 			);
@@ -233,6 +253,14 @@
 				2F4432D31F0791B400B9C7D8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2F4432F51F07AC7100B9C7D8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F4432F61F07AC7100B9C7D8 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
