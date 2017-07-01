@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2F4432C61F0791B400B9C7D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4432C51F0791B400B9C7D8 /* main.m */; };
 		2F4432C91F0791B400B9C7D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4432C81F0791B400B9C7D8 /* AppDelegate.m */; };
-		2F4432CC1F0791B400B9C7D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4432CB1F0791B400B9C7D8 /* ViewController.m */; };
 		2F4432CF1F0791B400B9C7D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432CD1F0791B400B9C7D8 /* Main.storyboard */; };
 		2F4432D11F0791B400B9C7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432D01F0791B400B9C7D8 /* Assets.xcassets */; };
 		2F4432D41F0791B400B9C7D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432D21F0791B400B9C7D8 /* LaunchScreen.storyboard */; };
@@ -24,6 +23,8 @@
 		2F4432F41F07A44C00B9C7D8 /* button_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432F21F07A44C00B9C7D8 /* button_enabled.png */; };
 		2F4432F71F07AC7100B9C7D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F4432F51F07AC7100B9C7D8 /* Localizable.strings */; };
 		2F4C2FFB1F07DBA0005BD29E /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4C2FF91F07DBA0005BD29E /* EXTScope.m */; };
+		2F4C30021F07EAEC005BD29E /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4C30001F07EAEC005BD29E /* MainVC.m */; };
+		2F4C30031F07EAEC005BD29E /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4C30011F07EAEC005BD29E /* MainVC.xib */; };
 		2F7DFBA81F07D659008799A7 /* Tracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DFBA71F07D659008799A7 /* Tracker.m */; };
 /* End PBXBuildFile section */
 
@@ -32,8 +33,6 @@
 		2F4432C51F0791B400B9C7D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F4432C71F0791B400B9C7D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2F4432C81F0791B400B9C7D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2F4432CA1F0791B400B9C7D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2F4432CB1F0791B400B9C7D8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2F4432CE1F0791B400B9C7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F4432D01F0791B400B9C7D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F4432D31F0791B400B9C7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +55,9 @@
 		2F4C2FF81F07DBA0005BD29E /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		2F4C2FF91F07DBA0005BD29E /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
 		2F4C2FFA1F07DBA0005BD29E /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		2F4C2FFF1F07EAEC005BD29E /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		2F4C30001F07EAEC005BD29E /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		2F4C30011F07EAEC005BD29E /* MainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 		2F7DFBA61F07D659008799A7 /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
 		2F7DFBA71F07D659008799A7 /* Tracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tracker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,11 +95,10 @@
 			children = (
 				2F4432DB1F07937800B9C7D8 /* FileSystemVC */,
 				2F4432DC1F07938100B9C7D8 /* Location */,
+				2F4C2FFE1F07EAD0005BD29E /* MainVC */,
 				2F7DFBA21F07CBBA008799A7 /* Tracker */,
 				2F4432C71F0791B400B9C7D8 /* AppDelegate.h */,
 				2F4432C81F0791B400B9C7D8 /* AppDelegate.m */,
-				2F4432CA1F0791B400B9C7D8 /* ViewController.h */,
-				2F4432CB1F0791B400B9C7D8 /* ViewController.m */,
 				2F4432CD1F0791B400B9C7D8 /* Main.storyboard */,
 				2F4432D01F0791B400B9C7D8 /* Assets.xcassets */,
 				2F4432D21F0791B400B9C7D8 /* LaunchScreen.storyboard */,
@@ -160,6 +161,16 @@
 				2F4C2FFA1F07DBA0005BD29E /* metamacros.h */,
 			);
 			path = external;
+			sourceTree = "<group>";
+		};
+		2F4C2FFE1F07EAD0005BD29E /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				2F4C2FFF1F07EAEC005BD29E /* MainVC.h */,
+				2F4C30001F07EAEC005BD29E /* MainVC.m */,
+				2F4C30011F07EAEC005BD29E /* MainVC.xib */,
+			);
+			path = MainVC;
 			sourceTree = "<group>";
 		};
 		2F7DFBA21F07CBBA008799A7 /* Tracker */ = {
@@ -235,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4C30031F07EAEC005BD29E /* MainVC.xib in Resources */,
 				2F4432E81F07939E00B9C7D8 /* FileSystemCell.xib in Resources */,
 				2F4432F41F07A44C00B9C7D8 /* button_enabled.png in Resources */,
 				2F4432F31F07A44C00B9C7D8 /* button_disabled.png in Resources */,
@@ -255,8 +267,8 @@
 			files = (
 				2F4C2FFB1F07DBA0005BD29E /* EXTScope.m in Sources */,
 				2F4432E71F07939E00B9C7D8 /* FileSystemCell.m in Sources */,
-				2F4432CC1F0791B400B9C7D8 /* ViewController.m in Sources */,
 				2F4432EA1F07939E00B9C7D8 /* FileSystemItem+Parser.m in Sources */,
+				2F4C30021F07EAEC005BD29E /* MainVC.m in Sources */,
 				2F4432E91F07939E00B9C7D8 /* FileSystemItem.m in Sources */,
 				2F4432EB1F07939F00B9C7D8 /* FileSystemVC.m in Sources */,
 				2F4432C91F0791B400B9C7D8 /* AppDelegate.m in Sources */,

@@ -1,11 +1,11 @@
 
-#import "ViewController.h"
+#import "MainVC.h"
 
 #import "FileSystemVC.h"
 #import "Location.h"
 #import "Tracker.h"
 
-@interface ViewController ()
+@interface MainVC ()
     <FileSystemVCDelegate,
     LocationDelegate,
     TrackerDelegate>
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation ViewController
+@implementation MainVC
 
 #pragma mark - PUBLIC
 
