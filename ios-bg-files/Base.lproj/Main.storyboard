@@ -37,62 +37,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aig-n9-POP">
-                                <rect key="frame" x="16" y="84" width="288" height="18"/>
-                                <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3m-Do-3po">
-                                        <rect key="frame" x="239" y="-6" width="51" height="31"/>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow background execution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="341-wC-du5">
-                                        <rect key="frame" x="0.0" y="0.0" width="219" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="I3m-Do-3po" firstAttribute="leading" secondItem="341-wC-du5" secondAttribute="trailing" constant="20" id="CtU-zf-ry0"/>
-                                    <constraint firstItem="341-wC-du5" firstAttribute="leading" secondItem="aig-n9-POP" secondAttribute="leading" id="d36-xc-22K"/>
-                                    <constraint firstAttribute="trailing" secondItem="I3m-Do-3po" secondAttribute="trailing" id="oiA-h1-H6M"/>
-                                    <constraint firstItem="I3m-Do-3po" firstAttribute="centerY" secondItem="aig-n9-POP" secondAttribute="centerY" id="p19-QN-fTp"/>
-                                    <constraint firstItem="341-wC-du5" firstAttribute="top" secondItem="aig-n9-POP" secondAttribute="top" id="s3P-23-0z3"/>
-                                    <constraint firstAttribute="bottom" secondItem="341-wC-du5" secondAttribute="bottom" id="zz9-MN-9dH"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jY-a9-H96">
-                                <rect key="frame" x="16" y="122" width="288" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Und-wl-8OA">
+                                <rect key="frame" x="16" y="84" width="288" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Select directory to monitor"/>
+                                <state key="normal" title="Background execution">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jY-a9-H96">
+                                <rect key="frame" x="16" y="134" width="288" height="30"/>
+                                <color key="backgroundColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Select directory to track">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="selectDirectory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uny-iJ-dmj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k57-bV-Bnf">
-                                <rect key="frame" x="16" y="192" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FJ-wv-TLO">
+                                <rect key="frame" x="16" y="214" width="288" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8jY-a9-H96" firstAttribute="top" secondItem="aig-n9-POP" secondAttribute="bottom" constant="20" id="7SJ-x6-iIF"/>
-                            <constraint firstItem="k57-bV-Bnf" firstAttribute="top" secondItem="8jY-a9-H96" secondAttribute="bottom" constant="40" id="CLi-2N-UX5"/>
-                            <constraint firstItem="aig-n9-POP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="SPk-mB-mFT"/>
-                            <constraint firstItem="k57-bV-Bnf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Uq4-r9-CL1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aig-n9-POP" secondAttribute="trailing" id="Ybg-XH-qeq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="k57-bV-Bnf" secondAttribute="trailing" id="eOV-C8-fSe"/>
+                            <constraint firstItem="9FJ-wv-TLO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0Wx-dU-SkL"/>
+                            <constraint firstItem="9FJ-wv-TLO" firstAttribute="top" secondItem="8jY-a9-H96" secondAttribute="bottom" constant="50" id="Hgz-ws-irz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Und-wl-8OA" secondAttribute="trailing" id="LSw-4z-6iJ"/>
+                            <constraint firstItem="8jY-a9-H96" firstAttribute="top" secondItem="Und-wl-8OA" secondAttribute="bottom" constant="20" id="T9b-Pa-IUA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9FJ-wv-TLO" secondAttribute="trailing" id="Wgv-ZD-fHl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8jY-a9-H96" secondAttribute="trailing" id="iDs-Gw-WRs"/>
+                            <constraint firstItem="Und-wl-8OA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="vqm-V9-VWa"/>
                             <constraint firstItem="8jY-a9-H96" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wGa-1o-I8G"/>
-                            <constraint firstItem="aig-n9-POP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xuk-mD-kOh"/>
+                            <constraint firstItem="Und-wl-8OA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xmf-zW-MVO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Monitor files in BG" id="Zr4-mu-G38"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-362.39999999999998" y="204.64767616191907"/>
+            <point key="canvasLocation" x="-363.75" y="203.75"/>
         </scene>
     </scenes>
 </document>
