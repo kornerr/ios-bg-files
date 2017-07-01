@@ -2,8 +2,11 @@
 #import "ViewController.h"
 
 #import "FileSystemVC.h"
+#import "Location.h"
 
 @interface ViewController () <FileSystemVCDelegate>
+
+@property (nonatomic, strong) Location *location;
 
 @end
 
@@ -19,6 +22,7 @@
 #pragma mark - PRIVATE
 
 - (void)setupViewController {
+    self.location = [Location new];
     
 }
 
