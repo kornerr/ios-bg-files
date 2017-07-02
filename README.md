@@ -1,6 +1,6 @@
 # Overview
 
-This is a sample iOS application to monitor selected directory changes in background.
+This is a sample iOS application to monitor directory changes in the background.
 
 # Video
 
@@ -20,6 +20,18 @@ Here's a short preview if you can't open YouTube for some reason:
 * Background execution is achieved by requesting 'Always' location updates.
 * File changes are tracked with GCD descriptor dispatch source.
 * Notifications are reported using local notifications.
+
+# Things to improve
+
+There are a few things that can be improved. However, since this is only a sample, they are left out.
+
+* Waiting for changes to finish. There are several use cases where reporting right away does not make much sense
+  * When several files are added or removed, there is a notification for each one of them
+  * When a large file is added, notification is reported before the file has been uploaded
+
+* Supporting UNUserNotificationCenter
+  * UILocalNotification is deprecated in iOS10, but still works
+  * `NotificationWithLNAndUNC` directory contains an attempt to use UNC if it's supported, but since the async nature of `UNUserNotificationCenter getNotificationSettingsWithCompletionHandler:` ruins the pretty interface of `Notification` class, I decided to stay with UILocalNotification
 
 # References
 
