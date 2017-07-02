@@ -2,11 +2,12 @@
 #import "Notification.h"
 
 #import "NotificationImplLN.h"
-//#import "NotificationUNC.h"
+#import "NotificationImplUNC.h"
 
 @interface Notification () <NotificationImplDelegate>
 
 @property (nonatomic, strong) NotificationImplLN *implLN;
+@property (nonatomic, strong) NotificationImplUNC *implUNC;
 
 @property (nonatomic, weak) id<NotificationImpl> impl;
 
@@ -51,17 +52,16 @@
 #pragma mark - PRIVATE
 
 - (void)initNotification {
+    if (NSClassFromString(@"UNUserNotificationsCenter")) {
+        self.implUNC = [NotificationImplUNC new];
+        self.implUNC.delegate = self;
+        self.impl = self.implUNC;
+    }
+    else {
         self.implLN = [NotificationImplLN new];
         self.implLN.delegate = self;
         self.impl = self.implLN;
-    /*
-    if (NSClassFromString(@"UNUserNotificationsCenter")) {
-
     }
-    else {
-
-    }
-    */
 }
 
 #pragma mark - DELEGATE

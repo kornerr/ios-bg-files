@@ -12,13 +12,8 @@
 - (void)application:(UIApplication *)app
     didRegisterUserNotificationSettings:(UIUserNotificationSettings *)uns {
 
-    if (self.delegate &&
-        [(NSObject *)self.delegate
-            respondsToSelector:@selector(notificationImplDidChangeAllowedStatus:)]) {
-
-        [self.delegate
-            notificationImplDidChangeAllowedStatus:self.isAllowed];
-    }
+    [self.delegate
+        notificationImplDidChangeAllowedStatus:self.isAllowed];
 }
 
 - (void)reportMessage:(NSString *)message {
