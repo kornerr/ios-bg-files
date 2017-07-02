@@ -1,7 +1,14 @@
 
 #import "Notification.h"
 
-@interface Notification ()
+#import "NotificationImplLN.h"
+//#import "NotificationUNC.h"
+
+@interface Notification () <NotificationImplDelegate>
+
+@property (nonatomic, strong) NotificationImplLN *implLN;
+
+@property (nonatomic, weak) id<NotificationImpl> impl;
 
 @end
 
@@ -12,16 +19,10 @@
 - (void)application:(UIApplication *)app
     didRegisterUserNotificationSettings:(UIUserNotificationSettings *)uns {
 
-    NSLog(
-        @"Notification. New permission status: '%@'",
-        @(self.isAllowed));
-    if (self.delegate &&
-        [(NSObject *)self.delegate
-            respondsToSelector:@selector(notification:didChangeAllowedStatus:)]) {
-
-        [self.delegate
-            notification:self
-            didChangeAllowedStatus:self.isAllowed];
+    if (self.implLN) {
+        [self.implLN
+            application:app
+            didRegisterUserNotificationSettings:uns];
     }
 }
 
@@ -34,35 +35,46 @@
 }
 
 - (void)reportMessage:(NSString *)message {
-    UILocalNotification *notification = [UILocalNotification new];
-    notification.alertBody = message;
-    notification.soundName = UILocalNotificationDefaultSoundName;
-    [[UIApplication sharedApplication]
-        presentLocalNotificationNow:notification];
+    [self.impl reportMessage:message];
 }
 
 - (void)requestPermission {
-    UIApplication *app = [UIApplication sharedApplication];
-    if ([app respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        [app registerUserNotificationSettings:
-            [UIUserNotificationSettings
-                settingsForTypes:UIUserNotificationTypeAlert
-                categories:nil]];
-    }
+    [self.impl requestPermission];
 }
 
 #pragma mark - PROPERTIES
 
 - (BOOL)isAllowed {
-    UIUserNotificationSettings *uns =
-        [[UIApplication sharedApplication]
-            currentUserNotificationSettings];
-    return (uns.types & UIUserNotificationTypeAlert);
+    return self.impl.isAllowed;
 }
 
 #pragma mark - PRIVATE
 
 - (void)initNotification {
+        self.implLN = [NotificationImplLN new];
+        self.implLN.delegate = self;
+        self.impl = self.implLN;
+    /*
+    if (NSClassFromString(@"UNUserNotificationsCenter")) {
+
+    }
+    else {
+
+    }
+    */
+}
+
+#pragma mark - DELEGATE
+
+- (void)notificationImplDidChangeAllowedStatus:(BOOL)status {
+    if (self.delegate &&
+        [(NSObject *)self.delegate
+            respondsToSelector:@selector(notification:didChangeAllowedStatus:)]) {
+
+        [self.delegate
+            notification:self
+            didChangeAllowedStatus:self.isAllowed];
+    }
 }
 
 @end

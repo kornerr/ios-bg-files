@@ -26,6 +26,7 @@
 		2F4C30031F07EAEC005BD29E /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4C30011F07EAEC005BD29E /* MainVC.xib */; };
 		2F4C300C1F07FB45005BD29E /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4C300B1F07FB45005BD29E /* Notification.m */; };
 		2F7DFBA81F07D659008799A7 /* Tracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DFBA71F07D659008799A7 /* Tracker.m */; };
+		2FDB638C1F08D5D70066F714 /* NotificationImplLN.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDB638B1F08D5D70066F714 /* NotificationImplLN.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,11 @@
 		2F4C300B1F07FB45005BD29E /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
 		2F7DFBA61F07D659008799A7 /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
 		2F7DFBA71F07D659008799A7 /* Tracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tracker.m; sourceTree = "<group>"; };
+		2FDB63871F08D5D70066F714 /* NotificationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationDelegate.h; sourceTree = "<group>"; };
+		2FDB63881F08D5D70066F714 /* NotificationImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationImpl.h; sourceTree = "<group>"; };
+		2FDB63891F08D5D70066F714 /* NotificationImplDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationImplDelegate.h; sourceTree = "<group>"; };
+		2FDB638A1F08D5D70066F714 /* NotificationImplLN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationImplLN.h; sourceTree = "<group>"; };
+		2FDB638B1F08D5D70066F714 /* NotificationImplLN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationImplLN.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,11 @@
 		2F4C30091F07FB30005BD29E /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				2FDB63871F08D5D70066F714 /* NotificationDelegate.h */,
+				2FDB63881F08D5D70066F714 /* NotificationImpl.h */,
+				2FDB63891F08D5D70066F714 /* NotificationImplDelegate.h */,
+				2FDB638A1F08D5D70066F714 /* NotificationImplLN.h */,
+				2FDB638B1F08D5D70066F714 /* NotificationImplLN.m */,
 				2F4C300A1F07FB45005BD29E /* Notification.h */,
 				2F4C300B1F07FB45005BD29E /* Notification.m */,
 			);
@@ -284,6 +295,7 @@
 				2F4432C91F0791B400B9C7D8 /* AppDelegate.m in Sources */,
 				2F7DFBA81F07D659008799A7 /* Tracker.m in Sources */,
 				2F4432EF1F0793A700B9C7D8 /* Location.m in Sources */,
+				2FDB638C1F08D5D70066F714 /* NotificationImplLN.m in Sources */,
 				2F4432C61F0791B400B9C7D8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,8 +21,9 @@
         [[UIWindow alloc]
             initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    [self setupNotification];
     [self setupMainVC];
+    [self setupNotification];
+    self.mainVC.notification = self.notification;
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -54,8 +55,6 @@
         [[UINavigationController alloc]
             initWithRootViewController:self.mainVC];
     self.window.rootViewController = nc;
-
-    self.mainVC.notification = self.notification;
 }
 
 @end
