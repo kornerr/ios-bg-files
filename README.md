@@ -6,7 +6,7 @@ This is a sample iOS application to monitor selected directory changes in backgr
 
 The video depicts adding/removing files using iTunes File sharing feature. iPhone is running iOS10.
 
-![YouTube video](https://youtu.be/TtOMlzdXXL8)
+[YouTube video](https://youtu.be/TtOMlzdXXL8)
 
 # Preview
 
