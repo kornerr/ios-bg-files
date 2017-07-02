@@ -18,6 +18,7 @@
 
 - (void)application:(UIApplication *)app
     didRegisterUserNotificationSettings:(UIUserNotificationSettings *)uns;
+
 - (void)reportMessage:(NSString *)message;
 - (void)requestPermission;
 
