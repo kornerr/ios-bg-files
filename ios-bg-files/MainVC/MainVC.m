@@ -148,6 +148,12 @@
 
     // Construct notification.
     NSUInteger n = [self numberOfFilesInDir:dir];
+    // NOTE When you replace a file with iTunes File sharing,
+    // NOTE it first removes and then adds the file.
+    // NOTE Thus, you have "Removed file(s)" notification
+    // NOTE followed by "Added file(s)" one.
+    // NOTE This can be fixed by waiting for file changes to
+    // NOTE stop and only then reporting the result.
     NSString *msg = @"Updated file(s)";
     if (n > self.lastNumberOfFiles) {
         msg = @"Added file(s)";
