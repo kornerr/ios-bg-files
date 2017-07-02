@@ -20,6 +20,8 @@
 
 @property (nonatomic, strong) NSString *selectedDir;
 
+@property (nonatomic, assign) NSUInteger lastNumberOfFiles;
+
 @end
 
 @implementation MainVC
@@ -65,10 +67,24 @@
 
 #pragma mark - PRIVATE
 
+- (NSUInteger)numberOfFilesInDir:(NSString *)dir {
+    NSError *err = nil;
+    NSArray *fileNames =
+        [[NSFileManager defaultManager]
+            contentsOfDirectoryAtPath:dir
+            error:&err];
+    if (err) {
+        NSLog(@"MainVC. numberOfFilesInDir failed. Error: '%@'", err);
+        return 0;
+    }
+    return fileNames.count;
+}
+
 - (void)setupMainVC {
     // File tracker.
     self.tracker = [Tracker new];
     self.tracker.delegate = self;
+    self.lastNumberOfFiles = 0;
     // Location.
     self.location = [Location new];
     self.location.delegate = self;
@@ -111,6 +127,8 @@
     self.selectedDir = url.path;
     [self.tracker startTrackingDirectory:url.path];
     [self refreshUI];
+
+    self.lastNumberOfFiles = [self numberOfFilesInDir:url.path];
 }
 
 - (void)location:(Location *)location
@@ -128,7 +146,18 @@
 - (void)tracker:(Tracker *)tracker
     didNoticeChangeInDirectory:(NSString *)dir {
 
-    [self.notification reportMessage:@"Directory changed"];
+    // Construct notification.
+    NSUInteger n = [self numberOfFilesInDir:dir];
+    NSString *msg = @"Updated file(s)";
+    if (n > self.lastNumberOfFiles) {
+        msg = @"Added file(s)";
+    }
+    else if (n < self.lastNumberOfFiles) {
+        msg = @"Removed file(s)";
+    }
+    self.lastNumberOfFiles = n;
+    // Report notification.
+    [self.notification reportWithTitle:@"Directory changed" message:msg];
 }
 
 @end

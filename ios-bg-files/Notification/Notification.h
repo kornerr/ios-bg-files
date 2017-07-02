@@ -18,7 +18,7 @@
 
 - (void)application:(UIApplication *)app
     didRegisterUserNotificationSettings:(UIUserNotificationSettings *)uns;
-- (void)reportMessage:(NSString *)message;
+- (void)reportWithTitle:(NSString *)title message:(NSString *)message;
 - (void)requestPermission;
 
 @end

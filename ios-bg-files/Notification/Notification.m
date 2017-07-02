@@ -25,10 +25,10 @@
     }
 }
 
-- (void)reportMessage:(NSString *)message {
+- (void)reportWithTitle:(NSString *)title message:(NSString *)message {
     UILocalNotification *notification = [UILocalNotification new];
+    notification.alertTitle = title;
     notification.alertBody = message;
-    notification.soundName = UILocalNotificationDefaultSoundName;
     [[UIApplication sharedApplication]
         presentLocalNotificationNow:notification];
 }
